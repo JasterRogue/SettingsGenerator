@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4895397}
   - component: {fileID: 4895398}
+  - component: {fileID: 4895399}
   m_Layer: 5
   m_Name: AtlanticaSlider
   m_TagString: Untagged
@@ -157,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.2, y: -105}
+  m_AnchoredPosition: {x: -155.7, y: -105}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4895398
@@ -210,6 +211,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4895399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50f9a4fb4504964cbdd97cbcb04912a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlanticaSlider: {fileID: 4895398}
+  currentValue: {fileID: 560126372}
 --- !u!1 &9134258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 206}
+  m_AnchoredPosition: {x: 30, y: 206}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &256366562
@@ -1243,6 +1258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294808335}
   - component: {fileID: 294808336}
+  - component: {fileID: 294808337}
   m_Layer: 5
   m_Name: DI_GoSlider
   m_TagString: Untagged
@@ -1269,7 +1285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 129}
+  m_AnchoredPosition: {x: 30, y: 129}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294808336
@@ -1322,6 +1338,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &294808337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294808334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ac6bfae6ea44a47b94f3063462a855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diGoSlider: {fileID: 294808336}
+  currentValue: {fileID: 1637020506}
 --- !u!1 &366294199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487651499}
   - component: {fileID: 487651500}
+  - component: {fileID: 487651501}
   m_Layer: 5
   m_Name: HTSlider
   m_TagString: Untagged
@@ -1893,6 +1924,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &487651501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487651498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98455abd8e418b41a5e2b54bc931f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htSlider: {fileID: 487651500}
+  currentValue: {fileID: 1707408724}
 --- !u!1 &516919855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +1948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516919856}
   - component: {fileID: 516919857}
+  - component: {fileID: 516919858}
   m_Layer: 5
   m_Name: OCSlider
   m_TagString: Untagged
@@ -1982,6 +2028,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &516919858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516919855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915a69d5e36ea1a41a5dfebd0987146f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ocSlider: {fileID: 516919857}
+  currentValue: {fileID: 2024160580}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Atlantica Replaced
+  m_Text: 'Atlantica: Off'
 --- !u!222 &560126373
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3147,7 +3207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hades Cup Replaced
+  m_Text: 'Hades Cup: Off'
 --- !u!222 &669942006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4185,8 +4245,9 @@ GameObject:
   m_Component:
   - component: {fileID: 900364401}
   - component: {fileID: 900364402}
+  - component: {fileID: 900364403}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AWSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4211,7 +4272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.16, y: -50}
+  m_AnchoredPosition: {x: -157.4, y: -50}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900364402
@@ -4258,12 +4319,26 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1399533948}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 6
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &900364403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900364400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36060ca74b468a42b04cfb120a60a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  awSlider: {fileID: 900364402}
+  currentValue: {fileID: 2145801715}
 --- !u!1 &930918542
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,6 +5243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292485935}
   - component: {fileID: 1292485936}
+  - component: {fileID: 1292485937}
   m_Layer: 5
   m_Name: HBGo_Slider
   m_TagString: Untagged
@@ -5194,7 +5270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 181}
+  m_AnchoredPosition: {x: 30, y: 181}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292485936
@@ -5247,6 +5323,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1292485937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292485934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d61374ced2a87a47a5db3ebf1e34dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hbGoSlider: {fileID: 1292485936}
+  currentValue: {fileID: 256366562}
 --- !u!1 &1298145452
 GameObject:
   m_ObjectHideFlags: 0
@@ -6499,7 +6589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 154}
+  m_AnchoredPosition: {x: 30, y: 154}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637020506
@@ -7841,6 +7931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916815783}
   - component: {fileID: 1916815784}
+  - component: {fileID: 1916815785}
   m_Layer: 5
   m_Name: HadesCupSlider
   m_TagString: Untagged
@@ -7867,7 +7958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -149.6, y: -155}
+  m_AnchoredPosition: {x: -157, y: -158.5}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916815784
@@ -7920,6 +8011,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1916815785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916815782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3f5e9654099894699215614132132b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hadesCupSlider: {fileID: 1916815784}
+  currentValue: {fileID: 669942005}
 --- !u!1 &1979208955
 GameObject:
   m_ObjectHideFlags: 0
@@ -8667,7 +8772,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -141.4, y: -15}
-  m_SizeDelta: {x: 181.5228, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145801715
 MonoBehaviour:
@@ -8701,7 +8806,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 Acre Wood Replaced
+  m_Text: '100 Acre Wood: Off'
 --- !u!222 &2145801716
 CanvasRenderer:
   m_ObjectHideFlags: 0
