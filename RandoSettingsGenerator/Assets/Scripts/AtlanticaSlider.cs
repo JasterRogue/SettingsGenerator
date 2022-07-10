@@ -7,7 +7,7 @@ public class AtlanticaSlider : MonoBehaviour
 {
     [SerializeField] private Slider atlanticaSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Atlantica: Off", "Atlantica On" };
+    private List<string> valueList = new List<string> { "Atlantica: Off", "Atlantica: On" };
 
     // Start is called before the first frame update
     void Start()
