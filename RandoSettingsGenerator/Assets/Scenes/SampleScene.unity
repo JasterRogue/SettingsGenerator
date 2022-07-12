@@ -7876,8 +7876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cae0dc6ea32a24099e755d35035ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalRestSlider: {fileID: 0}
-  currentValue: {fileID: 0}
+  finalRestSlider: {fileID: 1785258949}
+  currentValue: {fileID: 182697668}
 --- !u!114 &1785258949
 MonoBehaviour:
   m_ObjectHideFlags: 0

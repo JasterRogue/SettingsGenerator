@@ -7,7 +7,7 @@ public class EA4_Input : MonoBehaviour
 {
     [SerializeField] InputField ea4Field;
 
-    public string getHintText()
+    public string getEA4Text()
     {
         return ea4Field.text;
     }

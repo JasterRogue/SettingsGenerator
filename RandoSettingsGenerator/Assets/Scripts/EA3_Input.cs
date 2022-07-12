@@ -7,7 +7,7 @@ public class EA3_Input : MonoBehaviour
 {
     [SerializeField] InputField ea3Field;
 
-    public string getHintText()
+    public string getEA3Text()
     {
         return ea3Field.text;
     }
