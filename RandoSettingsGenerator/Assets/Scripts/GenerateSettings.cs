@@ -230,6 +230,7 @@ public class GenerateSettings : MonoBehaviour
         string ea4 = myEA4_Input.getEA4Text();
         string earlyAbilities = "EarlyAbilities = ";
 
+        //early abilities
         //check if string is blank first
         if (ea1 != "")
         {
@@ -242,7 +243,61 @@ public class GenerateSettings : MonoBehaviour
                 }
                 
             }
-        }
+        }//end of ea1
+
+        if (ea2 != "")
+        {
+            for (int i = 0; i < abiltiyNames.Length; i++)
+            {
+                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                if (abiltiyNames[i].Equals(ea2))
+                {
+                    earlyAbilities += abilityCodes[i] + " ";
+                }
+
+            }
+        }//end of ea2
+
+        if (ea3 != "")
+        {
+            for (int i = 0; i < abiltiyNames.Length; i++)
+            {
+                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                if (abiltiyNames[i].Equals(ea3))
+                {
+                    earlyAbilities += abilityCodes[i] + " ";
+                }
+
+            }
+        }//end of ea3
+
+        if (ea4 != "")
+        {
+            for (int i = 0; i < abiltiyNames.Length; i++)
+            {
+                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                if (abiltiyNames[i].Equals(ea4))
+                {
+                    earlyAbilities += abilityCodes[i];
+                }
+
+            }
+        }//end of ea4
+
+        //weapon stat randomization
+        string weaponStatValue = "WeaponStatRando = ";
+        string weaponStatInfo = "c Variable below determines how weapon stats will be randomized.\n" + 
+            "c 0 = Not at all\n" +
+            "c 1 = Weak weapons buffed\n" +
+            "c 2 = Stats shuffled between keyblades (str and magic only)\n" +
+            "c 3 = Stats shuffled and weak stats buffed\n\n";
+
+        weaponStatValue += myWeaponStatSlider.getWeaponStatSliderValue().ToString();
+
+
+
+
+
 
 
     }//end of generate()
