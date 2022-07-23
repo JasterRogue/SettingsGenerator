@@ -6595,6 +6595,7 @@ GameObject:
   - component: {fileID: 1463736998}
   - component: {fileID: 1463736997}
   - component: {fileID: 1463736996}
+  - component: {fileID: 1463736999}
   m_Layer: 5
   m_Name: GenerateButton
   m_TagString: Untagged
@@ -6664,7 +6665,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1463736997}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 673859914}
+        m_MethodName: generate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1463736997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6702,6 +6714,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463736994}
   m_CullTransparentMesh: 0
+--- !u!114 &1463736999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463736994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fc08b746a60eb4ca4862ec62b16cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generateButton: {fileID: 0}
 --- !u!1 &1482152265
 GameObject:
   m_ObjectHideFlags: 0

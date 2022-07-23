@@ -7,7 +7,7 @@ public class DJSlider : MonoBehaviour
 {
     [SerializeField] private Slider djSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Deep Jungle Locked", "Deep Jungle Unlocked"};
+    private List<string> valueList = new List<string> { "Slides Randomized: 0", "Slides Randomized: 1", "Slides Randomized: 2", "Slides Randomized: 3", "Slides Randomized: 4", "Slides Randomized: 5", "Slides Randomized: 6" };
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class DJSlider : MonoBehaviour
         djSlider.minValue = 0;
         djSlider.maxValue = valueList.Count - 1;
         djSlider.wholeNumbers = true;
-        djSlider.value = 1;
+        djSlider.value = 0;
     }
 
     private void SliderValueChangedCallback()

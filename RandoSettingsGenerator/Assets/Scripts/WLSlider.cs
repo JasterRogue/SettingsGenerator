@@ -7,7 +7,7 @@ public class WLSlider : MonoBehaviour
 {
     [SerializeField] private Slider wlSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Wonderland Locked", "Wonderland Unlocked"};
+    private List<string> valueList = new List<string> { "Evidence Randomized: 0", "Evidence Randomized: 1", "Evidence Randomized: 2", "Evidence Randomized: 3", "Evidence Randomized: 4" };
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class WLSlider : MonoBehaviour
         wlSlider.minValue = 0;
         wlSlider.maxValue = valueList.Count - 1;
         wlSlider.wholeNumbers = true;
-        wlSlider.value = 1;
+        wlSlider.value = 0;
     }
 
     private void SliderValueChangedCallback()

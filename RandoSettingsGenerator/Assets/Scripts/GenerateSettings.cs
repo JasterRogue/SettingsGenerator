@@ -31,6 +31,8 @@ public class GenerateSettings : MonoBehaviour
     WLSlider myWLSlider;
 
     Ability[] a;
+    String[] abiltiyNames;
+    String[] abilityCodes;
 
     // Start is called before the first frame update
     void Start()
@@ -57,14 +59,86 @@ public class GenerateSettings : MonoBehaviour
         myWLSlider = GameObject.FindObjectOfType<WLSlider>();
 
         //Create ability list
+        abiltiyNames[0] = "Treasure Magnet";
+        abiltiyNames[1] = "Combo Plus";
+        abiltiyNames[2] = "Air Combo Plus";
+        abiltiyNames[3] = "Critical Plus";
+        abiltiyNames[4] = "Scan";
+        abiltiyNames[5] = "Sonic Blade";
+        abiltiyNames[6] = "Ars Arcanum";
+        abiltiyNames[7] = "Strike Raid";
+        abiltiyNames[8] = "Ragnarok";
+        abiltiyNames[9] = "Trinity Limit";
+        abiltiyNames[10] = "Cheer";
+        abiltiyNames[11] = "Vortex";
+        abiltiyNames[12] = "Aerial Sweep";
+        abiltiyNames[13] = "Counterattack";
+        abiltiyNames[14] = "Blitz";
+        abiltiyNames[15] = "Guard";
+        abiltiyNames[16] = "Dodge Roll";
+        abiltiyNames[17] = "MP Haste";
+        abiltiyNames[18] = "MP Rage";
+        abiltiyNames[19] = "Second Chance";
+        abiltiyNames[20] = "Berserk";
+        abiltiyNames[21] = "Jackpot";
+        abiltiyNames[22] = "Lucky Strike";
+        abiltiyNames[23] = "Slapshot";
+        abiltiyNames[24] = "Sliding Dash";
+        abiltiyNames[25] = "Hurricane Blast";
+        abiltiyNames[26] = "Ripple Drive";
+        abiltiyNames[27] = "Stun Impact";
+        abiltiyNames[28] = "Gravity Break";
+        abiltiyNames[29] = "Zantetsuken";
+        abiltiyNames[30] = "Tech Boost";
+        abiltiyNames[31] = "Encounter Plus";
+        abiltiyNames[32] = "Leaf Bracer";
+        abiltiyNames[33] = "EXP Zero";
+        abiltiyNames[34] = "Combo Master";
+
+        //create ability code list
+        abilityCodes[0] = "85";
+        abilityCodes[1] = "86";
+        abilityCodes[2] = "87";
+        abilityCodes[3] = "88";
+        abilityCodes[4] = "8A";
+        abilityCodes[5] = "8B";
+        abilityCodes[6] = "8C";
+        abilityCodes[7] = "8D";
+        abilityCodes[8] = "8E";
+        abilityCodes[9] = "8F";
+        abilityCodes[10] = "90";
+        abilityCodes[11] = "91";
+        abilityCodes[12] = "92";
+        abilityCodes[13] = "93";
+        abilityCodes[14] = "94";
+        abilityCodes[15] = "95";
+        abilityCodes[16] = "96";
+        abilityCodes[17] = "97";
+        abilityCodes[18] = "98";
+        abilityCodes[19] = "99";
+        abilityCodes[20] = "9A";
+        abilityCodes[21] = "9B";
+        abilityCodes[22] = "9C";
+        abilityCodes[23] = "B5";
+        abilityCodes[24] = "B6";
+        abilityCodes[25] = "B7";
+        abilityCodes[26] = "B8";
+        abilityCodes[27] = "B9";
+        abilityCodes[28] = "BA";
+        abilityCodes[39] = "BB";
+        abilityCodes[30] = "BC";
+        abilityCodes[31] = "BD";
+        abilityCodes[32] = "BE";
+        abilityCodes[33] = "C0";
+        abilityCodes[34] = "C1";
+
         print("Creating ability list");
-        a = new Ability[36];
+        /*a = new Ability[35];
 
         a[0] = new Ability("Treasure Magnet", "85");
         a[1] = new Ability("Combo Plus", "86");
         a[2] = new Ability("Air Combo Plus", "87");
         a[3] = new Ability("Critical Plus", "88");
-        a[4] = new Ability("Second Wind", "89");
         a[5] = new Ability("Scan", "8A");
         a[6] = new Ability("Sonic Blade", "8B");
         a[7] = new Ability("Ars Arcanum", "8C");
@@ -95,7 +169,7 @@ public class GenerateSettings : MonoBehaviour
         a[32] = new Ability("Encounter Plus", "BD");
         a[33] = new Ability("Leaf Bracer", "BE");
         a[34] = new Ability("EXP Zero", "C0");
-        a[35] = new Ability("Combo Master", "C1");
+        a[35] = new Ability("Combo Master", "C1");*/
 
         //call the generate method to create the settings file
         generate();
@@ -103,39 +177,43 @@ public class GenerateSettings : MonoBehaviour
         
     }//end of start()
 
-    private void generate()
+    public void generate()
     {
         //start info; 
         //Variables for settings file
         string startInfo = "c Prevent select key items from being randomized\n" +
-            "c Item ID reference: https://pastebin.com/dfARF8ui \n" +
-            "c D9 corresponds to a random slide, DF corresponds to a random evidence\n" +
-            "c For example, if you want to unrandomize slide, evidence and entry pass:" +
-            "c Unrandomize = D9 DF E5";
+            "c Item IDs are listed in items.txt\n" +
+            "c Available options: BC, BD, BE, BF, C0, C1, C2, C3, C4, C5, C6, C7, CD, E5\n" +
+            "c For example, if you want to unrandomize Entry Pass and Navi-Gummi:\n" +
+            "c Unrandomize = CD E5";
 
         //next options to unlock DJ, OC and WL
-        string unlockedWorlds = "Unrandomize = ";
+        string unlockedWorlds = "";
+        string requiredSlides = "";
+        string requiredEvidence = "RequiredEvidence = ";
         int djValue = myDJSlider.getDJSliderValue();
         int wlValue = myWLSlider.getWLSliderValue();
         int ocValue = myOlympusSlider.getOCSliderValue();
 
-        if (djValue == 1)
-        {
-            //Unlock Deep Jungle
-            unlockedWorlds += "D9 ";
-        }
-
-        if (wlValue == 1)
-        {
-            //Unlock Wonderland
-            unlockedWorlds += "DF";
-        }
+        
 
         if (ocValue == 1)
         {
             //Unlock Olympus Coliseum
             unlockedWorlds += "E5";
         }
+
+        string slideEvidenceInfo = "c Define how many slides are required to progress Deep Jungle\n" +
+            "c And how many evidence is required to progress Wonderland\n " +
+            "c All 4 evidence and 6 slides will be randomized and accessible regardless\n" +
+            "c Slides must be picked up in Deep Jungle after meeting the condition, and must be picked up to progress\n" +
+            "c This is to avoid rare softlocks that happened previously\n" +
+            "c Evidence also becomes available for pick up after meeting condition, but is unnecessary to pick up";
+        
+        //Slides and Evidence Required
+        requiredSlides += "\n\nRequiredSlides" + djValue.ToString();
+
+        requiredEvidence += "\n\nRequiredEvidence" + wlValue.ToString();
 
         //early abiltiy info
         string earlyAbilityInfo = "c If you want guaranteed abilities on first level ups, put the hex codes for unequipped abilities here.\n" +
@@ -150,17 +228,19 @@ public class GenerateSettings : MonoBehaviour
         string ea2 = myEA2_Input.getEA2Text();
         string ea3 = myEA3_Input.getEA3Text();
         string ea4 = myEA4_Input.getEA4Text();
+        string earlyAbilities = "EarlyAbilities = ";
 
         //check if string is blank first
         if (ea1 != "")
         {
-            string currentAbiltiyName = ""; 
-
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < abiltiyNames.Length; i++)
             {
-                Debug.Log("a: " + a[0]);
-                currentAbiltiyName = a[i].ToString();
-                Debug.Log("Current Abiltiy Value:" + currentAbiltiyName);
+                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                if (abiltiyNames[i].Equals(ea1))
+                {
+                    earlyAbilities += abilityCodes[i] + " "; 
+                }
+                
             }
         }
 
