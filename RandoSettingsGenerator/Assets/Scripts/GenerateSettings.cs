@@ -30,7 +30,7 @@ public class GenerateSettings : MonoBehaviour
     WeaponStatSlider myWeaponStatSlider;
     WLSlider myWLSlider;
 
-    Ability[] a;
+    //Ability[] a;
     String[] abiltiyNames;
     String[] abilityCodes;
 
@@ -59,6 +59,7 @@ public class GenerateSettings : MonoBehaviour
         myWLSlider = GameObject.FindObjectOfType<WLSlider>();
 
         //Create ability list
+        abiltiyNames = new string[35];
         abiltiyNames[0] = "Treasure Magnet";
         abiltiyNames[1] = "Combo Plus";
         abiltiyNames[2] = "Air Combo Plus";
@@ -96,6 +97,7 @@ public class GenerateSettings : MonoBehaviour
         abiltiyNames[34] = "Combo Master";
 
         //create ability code list
+        abilityCodes = new string[35];
         abilityCodes[0] = "85";
         abilityCodes[1] = "86";
         abilityCodes[2] = "87";
@@ -125,7 +127,7 @@ public class GenerateSettings : MonoBehaviour
         abilityCodes[26] = "B8";
         abilityCodes[27] = "B9";
         abilityCodes[28] = "BA";
-        abilityCodes[39] = "BB";
+        abilityCodes[29] = "BB";
         abilityCodes[30] = "BC";
         abilityCodes[31] = "BD";
         abilityCodes[32] = "BE";
@@ -194,14 +196,29 @@ public class GenerateSettings : MonoBehaviour
         int djValue = myDJSlider.getDJSliderValue();
         int wlValue = myWLSlider.getWLSliderValue();
         int ocValue = myOlympusSlider.getOCSliderValue();
+        int hbGoVal = myHBGoSlider.getHBGoSliderValue();
+        int diGoVal = myDIGOSlider.getDIGoSliderValue();
 
-        
-
+        //Make Entry Pass vanilla
         if (ocValue == 1)
         {
             //Unlock Olympus Coliseum
-            unlockedWorlds += "E5";
+            unlockedWorlds += "E5 ";
         }
+
+        //HB Go Mode
+        if (hbGoVal == 1)
+        {
+            unlockedWorlds += "CD BC BD BE BF ";
+        }
+
+        //DI Go Mode
+        if (diGoVal == 1)
+        {
+            unlockedWorlds += "C0 C1 C2 C3 C4 C5 C6 C7";
+        }
+
+       
 
         string slideEvidenceInfo = "c Define how many slides are required to progress Deep Jungle\n" +
             "c And how many evidence is required to progress Wonderland\n " +
@@ -285,7 +302,7 @@ public class GenerateSettings : MonoBehaviour
         }//end of ea4
 
         //weapon stat randomization
-        string weaponStatValue = "WeaponStatRando = ";
+        string weaponStatValue = "\n\nWeaponStatRando = ";
         string weaponStatInfo = "c Variable below determines how weapon stats will be randomized.\n" + 
             "c 0 = Not at all\n" +
             "c 1 = Weak weapons buffed\n" +
@@ -294,10 +311,111 @@ public class GenerateSettings : MonoBehaviour
 
         weaponStatValue += myWeaponStatSlider.getWeaponStatSliderValue().ToString();
 
+        //movement stacks 
+        string movemementStackVal = "StackAbilities = ";
+        string movementInfo = "c Stack abilities. Currently, you can sometimes get duplicate abilities.\n" +
+            "c This will determine if having multiple equipped is beneficial\n" +
+            "c 0 = No stacking. Vanilla. You just have excess abilities in the menu.\n" +
+            "c 1 = High Jump stacks: Jump higher the more you have.\n" +
+            "c 2 = High Jump, Glides, Mermaid Kick, Dodge Roll. First glide/superglide turns into glide, next into superglide and past that it gets faster.\n\n";
+        
 
+        movemementStackVal += myMovementSlider.getMovementSliderValue().ToString();
 
+        //save warping
+        string warpVal = "WarpAnywhere ";
+        string warpInfo = "c Allow warping with SaveAnywhere\n" +
+            "c Warping at inopportune times can lead to crashes, audio bugs, softlocks or other issues with story progression\n" +
+            "c Use at your own responsibility\n" +
+            "c 0 = You can only warp from a save point\n" +
+            "c 1 = You can warp in normal, non-combat state. Should circuvment most issues\n" +
+            "c 2 = No restrictions\n\n";
 
+        warpVal += mySaveWarpSlider.getWarpSliderValue().ToString();
 
+        //shops
+        string shopVal = "RandomShops = ";
+        string shopInfo = "c Shop randomization\n" +
+            "c 0 = Vanilla shops\n" +
+            "c 1 = Shops can have anything but important key items\n" +
+            "c 2 = Shops can have anything, including extra out of logic key items\n\n";
+
+        shopVal += myShopRandoSlider.getShopSliderValue().ToString();
+
+        //replace rewards
+        string replaceChests = "ReplaceChests = ";
+        string replaceRewards = "\n\nReplaceRewards = ";
+        string replaceRewardInfo = "c Unrandomize rewards\n" +
+            "c List the reward IDs from Rewards.txt that you want to unrandomize\n" +
+            "c List them in VanillaRewards to keep it vanilla, or ReplaceRewards to put in a potion and keep the reward in the pool\n" +
+            "c For example, if you want to unrandomize Sephiroth and Unknown\n" +
+            "c ReplaceRewards = 95 97";
+
+        string vanillaRewards = "\n\nVanilla Rewards = ";
+
+        //atlantica rewards
+        if (myAtlanticaSlider.getAtlanticaSliderValue() == 0)
+        {
+            replaceRewards += "0E 17 ";
+        }
+
+        //hades cup rewards
+        //all rewards replaced
+        if (myHadesCupSlider.getHadesSliderValue() == 0)
+        {
+            replaceRewards += "22 61 65 ";
+        }
+
+        //only trinity rando
+        if (myHadesCupSlider.getHadesSliderValue() == 1)
+        {
+            replaceRewards += "61 65 ";
+        }
+
+        //trinity + save the queen rando
+        if (myHadesCupSlider.getHadesSliderValue() == 2)
+        {
+            replaceRewards += "65 ";
+        }
+
+        //100 acre wood
+        //100 Acre off
+        if (myAWSlider.getAWSliderValue() == 0)
+        {
+            replaceRewards += "2A 2B 2C 2D 2E 4c 9b 4d ";
+            replaceChests += "a7 a8 a9 aa ";
+        }
+
+        //Page 1 chest is rando
+        if (myAWSlider.getAWSliderValue() == 1)
+        {
+            replaceRewards += "2A 2B 2C 2D 2E 4c 9b 4d ";
+            replaceChests += "a8 a9 aa ";
+        }
+
+        //Up to Page 3 is rando 
+        if (myAWSlider.getAWSliderValue() == 2)
+        {
+            replaceRewards += "2B 2C 2D 2E 4c 9b 4d ";
+            replaceChests += "a8 a9 aa ";
+        }
+
+        //up to page 4 is rando
+        if (myAWSlider.getAWSliderValue() == 3)
+        {
+            replaceRewards += "2C 2D 2E 4c 9b 4d ";
+            replaceChests += "a8 a9 aa ";
+        }
+
+        //up to page 6 is rando
+        if (myAWSlider.getAWSliderValue() == 4)
+        {
+            replaceRewards += "2D 2E ";
+        }
+
+        //replace chests
+
+        //hint language
 
 
     }//end of generate()

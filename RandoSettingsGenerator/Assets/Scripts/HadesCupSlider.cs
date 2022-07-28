@@ -7,7 +7,7 @@ public class HadesCupSlider : MonoBehaviour
 {
     [SerializeField] private Slider hadesCupSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Hades Cup: Off", "Group Stage Randomized", "Solo Randomized", "All Stages Randomized" };
+    private List<string> valueList = new List<string> { "Hades Cup: Off", "Group Randomized", "Solo Randomized", "All Stages Randomized" };
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class HadesCupSlider : MonoBehaviour
         currentValue.text = valueList[numericSliderValue];
     }
 
-    public int getOCSliderValue()
+    public int getHadesSliderValue()
     {
         return (int)hadesCupSlider.value;
     }
