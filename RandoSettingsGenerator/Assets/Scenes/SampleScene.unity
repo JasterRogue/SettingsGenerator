@@ -2372,7 +2372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deep Jungle Locked
+  m_Text: 'Slides Required: 0'
 --- !u!222 &544574630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8022,7 +8022,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wonderland Locked
+  m_Text: 'Evidence Required: 0'
 --- !u!222 &1786525826
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -378,7 +378,7 @@ public class GenerateSettings : MonoBehaviour
             replaceRewards += "65 ";
         }
 
-        //100 acre wood
+        //100 acre wood replace
         //100 Acre off
         if (myAWSlider.getAWSliderValue() == 0)
         {
@@ -410,12 +410,42 @@ public class GenerateSettings : MonoBehaviour
         //up to page 6 is rando
         if (myAWSlider.getAWSliderValue() == 4)
         {
-            replaceRewards += "2D 2E ";
+            replaceRewards += "2D 2E \n\n";
+        }
+
+
+
+        //vanilla chests
+        //vanilla jack in the box chest
+        string vanillaChests = "VanillaChests = ";
+        string chestInfo = "c Unrandomize chests\n" +
+            "c List the chest IDs from Chests.txt that you want to unrandomize\n" +
+            "c For example, if you want to unrandomize 100 acre wood chests\n" +
+            "c ReplaceChests = a7 a8 a9 aa\n" +
+            "c However note that if the chest contains a reward, you should unrandomize that reward as well, else whatever ends up on that reward will be inaccessible\n" +
+            "c So you should also include 4c 9b 4d in ReplaceRewards\n\n";
+
+        if (myHTSlider.getHTSliderValue() == 1)
+        {
+            vanillaChests += "131\n\n";    
         }
 
         //replace chests
+        //final rest off
+        if (myFinalRestSlider.getFinalRestSliderValue() == 0)
+        {
+            replaceChests += "1dd";
+        }
 
         //hint language
+        string hintLanguage = "HintLanguage = " + myHintInput.getHintText();
+        string languageInfo = "c Language for hints in Ansem's Reports\n" +
+            "c 'auto' detects a supported language automatically\n" +
+            "c You can also manually define the language here\n" +
+            "c In that case, a txt file with the given name must exist, and translations will be read from there\n\n";
+
+
+        //now to finally create the text file
 
 
     }//end of generate()

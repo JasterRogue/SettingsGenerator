@@ -30,7 +30,7 @@ public class HTSlider : MonoBehaviour
         currentValue.text = valueList[numericSliderValue];
     }
 
-    public int getOCSliderValue()
+    public int getHTSliderValue()
     {
         return (int)htSlider.value;
     }
