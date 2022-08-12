@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 //The main script that is used to generate the settings
 
 public class GenerateSettings : MonoBehaviour
 {
-    
 
     //Script references
     AtlanticaSlider myAtlanticaSlider;
@@ -29,6 +30,7 @@ public class GenerateSettings : MonoBehaviour
     ShopRandoSlider myShopRandoSlider;
     WeaponStatSlider myWeaponStatSlider;
     WLSlider myWLSlider;
+    [SerializeField] Image successImage; 
 
     //Ability[] a;
     String[] abiltiyNames;
@@ -37,6 +39,7 @@ public class GenerateSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //Get access to each script
         myAtlanticaSlider = GameObject.FindObjectOfType<AtlanticaSlider>();
         myAWSlider = GameObject.FindObjectOfType<AWSlider>();
@@ -190,8 +193,8 @@ public class GenerateSettings : MonoBehaviour
             "c Unrandomize = CD E5";
 
         //next options to unlock DJ, OC and WL
-        string unlockedWorlds = "";
-        string requiredSlides = "";
+        string unrandomize = "\nUnrandomize = ";
+        string requiredSlides = "RequiredSlides = ";
         string requiredEvidence = "RequiredEvidence = ";
         int djValue = myDJSlider.getDJSliderValue();
         int wlValue = myWLSlider.getWLSliderValue();
@@ -203,20 +206,22 @@ public class GenerateSettings : MonoBehaviour
         if (ocValue == 1)
         {
             //Unlock Olympus Coliseum
-            unlockedWorlds += "E5 ";
+            unrandomize += "E5 ";
         }
 
         //HB Go Mode
         if (hbGoVal == 1)
         {
-            unlockedWorlds += "CD BC BD BE BF ";
+            unrandomize += "CD BC BD BE BF ";
         }
 
         //DI Go Mode
         if (diGoVal == 1)
         {
-            unlockedWorlds += "C0 C1 C2 C3 C4 C5 C6 C7";
+            unrandomize += "C0 C1 C2 C3 C4 C5 C6 C7";
         }
+
+        unrandomize += "\n";
 
        
 
@@ -228,9 +233,9 @@ public class GenerateSettings : MonoBehaviour
             "c Evidence also becomes available for pick up after meeting condition, but is unnecessary to pick up";
         
         //Slides and Evidence Required
-        requiredSlides += "\n\nRequiredSlides" + djValue.ToString();
+        requiredSlides += djValue.ToString() + "\n\n";
 
-        requiredEvidence += "\n\nRequiredEvidence" + wlValue.ToString();
+        requiredEvidence += wlValue.ToString() + "\n\n";
 
         //early abiltiy info
         string earlyAbilityInfo = "c If you want guaranteed abilities on first level ups, put the hex codes for unequipped abilities here.\n" +
@@ -238,14 +243,14 @@ public class GenerateSettings : MonoBehaviour
             "c Find ability codes here https://pastebin.com/ZH0L3XXi \n" +
             "c Scroll down for the Not Equipped versions.\n" +
             "c For example, early scan and dodge roll would be:\n" +
-            "c EarlyAbilities = 8A 96";
+            "c EarlyAbilities = 8A 96\n";
 
         //select early abilities
         string ea1 = myEA1_Input.getEA1Text();
         string ea2 = myEA2_Input.getEA2Text();
         string ea3 = myEA3_Input.getEA3Text();
         string ea4 = myEA4_Input.getEA4Text();
-        string earlyAbilities = "EarlyAbilities = ";
+        string earlyAbilities = "\nEarlyAbilities = ";
 
         //early abilities
         //check if string is blank first
@@ -301,15 +306,17 @@ public class GenerateSettings : MonoBehaviour
             }
         }//end of ea4
 
+        earlyAbilities += "\n";
+
         //weapon stat randomization
-        string weaponStatValue = "\n\nWeaponStatRando = ";
-        string weaponStatInfo = "c Variable below determines how weapon stats will be randomized.\n" + 
+        string weaponStatValue = "\nWeaponStatRando = ";
+        string weaponStatInfo = "\nc Variable below determines how weapon stats will be randomized.\n" + 
             "c 0 = Not at all\n" +
             "c 1 = Weak weapons buffed\n" +
             "c 2 = Stats shuffled between keyblades (str and magic only)\n" +
-            "c 3 = Stats shuffled and weak stats buffed\n\n";
+            "c 3 = Stats shuffled and weak stats buffed\n";
 
-        weaponStatValue += myWeaponStatSlider.getWeaponStatSliderValue().ToString();
+        weaponStatValue += myWeaponStatSlider.getWeaponStatSliderValue().ToString() + "\n";
 
         //movement stacks 
         string movemementStackVal = "StackAbilities = ";
@@ -323,7 +330,7 @@ public class GenerateSettings : MonoBehaviour
         movemementStackVal += myMovementSlider.getMovementSliderValue().ToString();
 
         //save warping
-        string warpVal = "WarpAnywhere ";
+        string warpVal = "WarpAnywhere = ";
         string warpInfo = "c Allow warping with SaveAnywhere\n" +
             "c Warping at inopportune times can lead to crashes, audio bugs, softlocks or other issues with story progression\n" +
             "c Use at your own responsibility\n" +
@@ -446,8 +453,61 @@ public class GenerateSettings : MonoBehaviour
 
 
         //now to finally create the text file
+        string filename = "settings.txt";
+
+        try
+        {
+            //check if file exists
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
+
+            //create file
+            using (StreamWriter sw = File.CreateText(filename))
+            {
+                sw.WriteLine(startInfo);
+                sw.WriteLine(unrandomize);
+                sw.WriteLine(slideEvidenceInfo);
+                sw.WriteLine(requiredSlides);
+                sw.WriteLine(requiredEvidence);
+                sw.WriteLine(earlyAbilityInfo);
+                sw.WriteLine(earlyAbilities);
+                sw.WriteLine(weaponStatInfo);
+                sw.WriteLine(weaponStatValue);
+                sw.WriteLine(movementInfo);
+                sw.WriteLine(movemementStackVal);
+                sw.WriteLine(warpInfo);
+                sw.WriteLine(warpVal);
+                sw.WriteLine(shopInfo);
+                sw.WriteLine(shopVal);
+                sw.WriteLine(replaceRewardInfo);
+                sw.WriteLine(vanillaRewards);
+                sw.WriteLine(replaceRewards);
+                sw.WriteLine(chestInfo);
+                sw.WriteLine(vanillaChests);
+                sw.WriteLine(replaceChests);
+                sw.WriteLine(languageInfo);
+                sw.WriteLine(hintLanguage);
+
+                //successImage.gameObject.SetActive(true);
+                //StartCoroutine(countdown());
+            }
+        }
+        
+        catch(Exception ex) 
+        {
+            Debug.Log(ex);
+        }
+
 
 
     }//end of generate()
+
+    private IEnumerator countdown()
+    {
+        yield return new WaitForSeconds(3);
+        successImage.gameObject.SetActive(false);
+    }
 
 }//end of class
