@@ -7,7 +7,7 @@ public class SaveWarpSlider : MonoBehaviour
 {
     [SerializeField]private Slider warpSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Only Warp from Save Points", "Warp out of Combat", "No Restriction Warp"};
+    private List<string> valueList = new List<string> { "Gummi Warps: Locked", "Gummi Warps: Blue HUD Only", "Gummi Warp: Unrestricted"};
 
     // Start is called before the first frame update
     void Start()

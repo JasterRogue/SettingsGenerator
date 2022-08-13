@@ -230,12 +230,12 @@ public class GenerateSettings : MonoBehaviour
             "c All 4 evidence and 6 slides will be randomized and accessible regardless\n" +
             "c Slides must be picked up in Deep Jungle after meeting the condition, and must be picked up to progress\n" +
             "c This is to avoid rare softlocks that happened previously\n" +
-            "c Evidence also becomes available for pick up after meeting condition, but is unnecessary to pick up";
+            "c Evidence also becomes available for pick up after meeting condition, but is unnecessary to pick up\n";
         
         //Slides and Evidence Required
-        requiredSlides += djValue.ToString() + "\n\n";
+        requiredSlides += djValue.ToString() + "\n";
 
-        requiredEvidence += wlValue.ToString() + "\n\n";
+        requiredEvidence += wlValue.ToString() + "\n";
 
         //early abiltiy info
         string earlyAbilityInfo = "c If you want guaranteed abilities on first level ups, put the hex codes for unequipped abilities here.\n" +
@@ -314,7 +314,7 @@ public class GenerateSettings : MonoBehaviour
             "c 0 = Not at all\n" +
             "c 1 = Weak weapons buffed\n" +
             "c 2 = Stats shuffled between keyblades (str and magic only)\n" +
-            "c 3 = Stats shuffled and weak stats buffed\n";
+            "c 3 = Stats shuffled and weak stats buffed";
 
         weaponStatValue += myWeaponStatSlider.getWeaponStatSliderValue().ToString() + "\n";
 
@@ -324,10 +324,10 @@ public class GenerateSettings : MonoBehaviour
             "c This will determine if having multiple equipped is beneficial\n" +
             "c 0 = No stacking. Vanilla. You just have excess abilities in the menu.\n" +
             "c 1 = High Jump stacks: Jump higher the more you have.\n" +
-            "c 2 = High Jump, Glides, Mermaid Kick, Dodge Roll. First glide/superglide turns into glide, next into superglide and past that it gets faster.\n\n";
+            "c 2 = High Jump, Glides, Mermaid Kick, Dodge Roll. First glide/superglide turns into glide, next into superglide and past that it gets faster.\n";
         
 
-        movemementStackVal += myMovementSlider.getMovementSliderValue().ToString();
+        movemementStackVal += myMovementSlider.getMovementSliderValue().ToString() + "\n";
 
         //save warping
         string warpVal = "WarpAnywhere = ";
@@ -336,29 +336,29 @@ public class GenerateSettings : MonoBehaviour
             "c Use at your own responsibility\n" +
             "c 0 = You can only warp from a save point\n" +
             "c 1 = You can warp in normal, non-combat state. Should circuvment most issues\n" +
-            "c 2 = No restrictions\n\n";
+            "c 2 = No restrictions\n";
 
-        warpVal += mySaveWarpSlider.getWarpSliderValue().ToString();
+        warpVal += mySaveWarpSlider.getWarpSliderValue().ToString() + "\n";
 
         //shops
         string shopVal = "RandomShops = ";
         string shopInfo = "c Shop randomization\n" +
             "c 0 = Vanilla shops\n" +
             "c 1 = Shops can have anything but important key items\n" +
-            "c 2 = Shops can have anything, including extra out of logic key items\n\n";
+            "c 2 = Shops can have anything, including extra out of logic key items\n";
 
-        shopVal += myShopRandoSlider.getShopSliderValue().ToString();
+        shopVal += myShopRandoSlider.getShopSliderValue().ToString() + "\n";
 
         //replace rewards
         string replaceChests = "ReplaceChests = ";
-        string replaceRewards = "\n\nReplaceRewards = ";
+        string replaceRewards = "\nReplaceRewards = ";
         string replaceRewardInfo = "c Unrandomize rewards\n" +
             "c List the reward IDs from Rewards.txt that you want to unrandomize\n" +
             "c List them in VanillaRewards to keep it vanilla, or ReplaceRewards to put in a potion and keep the reward in the pool\n" +
             "c For example, if you want to unrandomize Sephiroth and Unknown\n" +
             "c ReplaceRewards = 95 97";
 
-        string vanillaRewards = "\n\nVanilla Rewards = ";
+        string vanillaRewards = "\nVanilla Rewards = ";
 
         //atlantica rewards
         if (myAtlanticaSlider.getAtlanticaSliderValue() == 0)
@@ -417,7 +417,7 @@ public class GenerateSettings : MonoBehaviour
         //up to page 6 is rando
         if (myAWSlider.getAWSliderValue() == 4)
         {
-            replaceRewards += "2D 2E \n\n";
+            replaceRewards += "2D 2E \n";
         }
 
 
@@ -425,12 +425,12 @@ public class GenerateSettings : MonoBehaviour
         //vanilla chests
         //vanilla jack in the box chest
         string vanillaChests = "VanillaChests = ";
-        string chestInfo = "c Unrandomize chests\n" +
+        string chestInfo = "\nc Unrandomize chests\n" +
             "c List the chest IDs from Chests.txt that you want to unrandomize\n" +
             "c For example, if you want to unrandomize 100 acre wood chests\n" +
             "c ReplaceChests = a7 a8 a9 aa\n" +
             "c However note that if the chest contains a reward, you should unrandomize that reward as well, else whatever ends up on that reward will be inaccessible\n" +
-            "c So you should also include 4c 9b 4d in ReplaceRewards\n\n";
+            "c So you should also include 4c 9b 4d in ReplaceRewards\n";
 
         if (myHTSlider.getHTSliderValue() == 1)
         {
@@ -449,7 +449,7 @@ public class GenerateSettings : MonoBehaviour
         string languageInfo = "c Language for hints in Ansem's Reports\n" +
             "c 'auto' detects a supported language automatically\n" +
             "c You can also manually define the language here\n" +
-            "c In that case, a txt file with the given name must exist, and translations will be read from there\n\n";
+            "c In that case, a txt file with the given name must exist, and translations will be read from there\n";
 
 
         //now to finally create the text file
