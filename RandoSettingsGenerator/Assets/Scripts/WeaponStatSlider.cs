@@ -8,7 +8,7 @@ public class WeaponStatSlider : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Slider weaponStatSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Vanilla Weapon Stats", "Weak Weapons Buffed", "Stats Shuffled", "Stats Shuffled/Weak Weapons Buffed" };
+    private List<string> valueList = new List<string> { "Weapon Stats: Vanilla", "Weapon Stats: Boosted", "Weapons Stats: Shuffled", "Weapon Stats: Boosted and Shuffled" };
 
     void Start()
     {

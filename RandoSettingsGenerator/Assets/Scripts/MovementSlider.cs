@@ -7,7 +7,7 @@ public class MovementSlider : MonoBehaviour
 {
     [SerializeField] private Slider movementSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Vanilla Movement. No stacking", "High Jump Stacks", "All Movement Stacks" };
+    private List<string> valueList = new List<string> { "Movement Stacking: Disabled.", "Movement Stacking: High Jump Only", "Movement Stacking: All Shared Abilities" };
 
     // Start is called before the first frame update
     void Start()

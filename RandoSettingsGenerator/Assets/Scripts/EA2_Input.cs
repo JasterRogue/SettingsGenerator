@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class EA2_Input : MonoBehaviour
 {
-    [SerializeField] InputField ea2Field;
+    //[SerializeField] InputField ea1Field;
+    [SerializeField] Dropdown ea2DropDown;
 
-    public string getEA2Text()
+    /* public string getEA1Text()
+     {
+         return ea1Field.text;
+     }*/
+
+    public string getEA2DropDownText()
     {
-        return ea2Field.text;
+        return ea2DropDown.options[ea2DropDown.value].text;
     }
 }

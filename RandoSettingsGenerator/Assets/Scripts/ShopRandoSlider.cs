@@ -7,7 +7,7 @@ public class ShopRandoSlider : MonoBehaviour
 {
     [SerializeField] private Slider shopSlider;
     [SerializeField] private Text currentValue = null;
-    private List<string> valueList = new List<string> { "Vanilla Shop/Synth", "Rando Shop/Synth except key items", "Shop/Synth Can Have Anything" };
+    private List<string> valueList = new List<string> { "Shop/Synth: Vanilla", "Shop/Synth: No Key Items", "Shop/Synth: Fully Randomized" };
 
     // Start is called before the first frame update
     void Start()

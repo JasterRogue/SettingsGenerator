@@ -67,7 +67,8 @@ c ReplaceRewards = 95 97
 
 Vanilla Rewards = 
 
-ReplaceRewards = 0E 17 22 61 65 2A 2B 2C 2D 2E 4c 9b 4d 
+ReplaceRewards = 0E 17 22 61 65 2A 2B 2C 2D 2E 4c 9b 4d 95 97
+
 
 c Unrandomize chests
 c List the chest IDs from Chests.txt that you want to unrandomize

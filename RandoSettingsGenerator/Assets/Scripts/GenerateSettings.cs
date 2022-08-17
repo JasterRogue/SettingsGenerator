@@ -30,6 +30,10 @@ public class GenerateSettings : MonoBehaviour
     ShopRandoSlider myShopRandoSlider;
     WeaponStatSlider myWeaponStatSlider;
     WLSlider myWLSlider;
+    SephirothSlider mySephirothSlider;
+    IceTitanSlider myIceTitanSlider;
+    KurtZisaSlider myKurtZisaSlider;
+    MFSlider myMFSlider;
     [SerializeField] Image successImage; 
 
     //Ability[] a;
@@ -60,6 +64,11 @@ public class GenerateSettings : MonoBehaviour
         myShopRandoSlider = GameObject.FindObjectOfType<ShopRandoSlider>();
         myWeaponStatSlider = GameObject.FindObjectOfType<WeaponStatSlider>();
         myWLSlider = GameObject.FindObjectOfType<WLSlider>();
+        mySephirothSlider = GameObject.FindObjectOfType<SephirothSlider>();
+        myIceTitanSlider = GameObject.FindObjectOfType<IceTitanSlider>();
+        myKurtZisaSlider = GameObject.FindObjectOfType<KurtZisaSlider>();
+        myMFSlider = GameObject.FindObjectOfType<MFSlider>();
+
 
         //Create ability list
         abiltiyNames = new string[35];
@@ -137,46 +146,6 @@ public class GenerateSettings : MonoBehaviour
         abilityCodes[33] = "C0";
         abilityCodes[34] = "C1";
 
-        print("Creating ability list");
-        /*a = new Ability[35];
-
-        a[0] = new Ability("Treasure Magnet", "85");
-        a[1] = new Ability("Combo Plus", "86");
-        a[2] = new Ability("Air Combo Plus", "87");
-        a[3] = new Ability("Critical Plus", "88");
-        a[5] = new Ability("Scan", "8A");
-        a[6] = new Ability("Sonic Blade", "8B");
-        a[7] = new Ability("Ars Arcanum", "8C");
-        a[8] = new Ability("Strike Raid", "8D");
-        a[9] = new Ability("Ragnarok", "8E");
-        a[10] = new Ability("Trinity Limit", "8F");
-        a[11] = new Ability("Cheer", "90");
-        a[12] = new Ability("Vortex", "91");
-        a[13] = new Ability("Aerial Sweep", "92");
-        a[14] = new Ability("Counterattack", "93");
-        a[15] = new Ability("Blitz", "94");
-        a[16] = new Ability("Guard", "95");
-        a[17] = new Ability("Dodge Roll", "96");
-        a[18] = new Ability("MP Haste", "97");
-        a[19] = new Ability("MP Rage", "98");
-        a[20] = new Ability("Second Chance", "99");
-        a[21] = new Ability("Berserk", "9A");
-        a[22] = new Ability("Jackpot", "9B");
-        a[23] = new Ability("Lucky Strike", "9C");
-        a[24] = new Ability("Slapshot", "B5");
-        a[25] = new Ability("Sliding Dash", "B6");
-        a[26] = new Ability("Hurricane Blast", "B7");
-        a[27] = new Ability("Ripple Drive", "B8");
-        a[28] = new Ability("Stun Impact", "B9");
-        a[29] = new Ability("Gravity Break", "BA");
-        a[30] = new Ability("Zantetsuken", "BB");
-        a[31] = new Ability("Tech Boost", "BC");
-        a[32] = new Ability("Encounter Plus", "BD");
-        a[33] = new Ability("Leaf Bracer", "BE");
-        a[34] = new Ability("EXP Zero", "C0");
-        a[35] = new Ability("Combo Master", "C1");*/
-
-        //call the generate method to create the settings file
         generate();
 
         
@@ -245,11 +214,10 @@ public class GenerateSettings : MonoBehaviour
             "c For example, early scan and dodge roll would be:\n" +
             "c EarlyAbilities = 8A 96\n";
 
-        //select early abilities
-        string ea1 = myEA1_Input.getEA1Text();
-        string ea2 = myEA2_Input.getEA2Text();
-        string ea3 = myEA3_Input.getEA3Text();
-        string ea4 = myEA4_Input.getEA4Text();
+        string ea1 = myEA1_Input.getEA1DropDownText();
+        string ea2 = myEA2_Input.getEA2DropDownText();
+        string ea3 = myEA3_Input.getEA3DropDownText();
+        string ea4 = myEA4_Input.getEA4DropDownText();
         string earlyAbilities = "\nEarlyAbilities = ";
 
         //early abilities
@@ -258,7 +226,7 @@ public class GenerateSettings : MonoBehaviour
         {
             for (int i = 0; i < abiltiyNames.Length; i++)
             {
-                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                //Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
                 if (abiltiyNames[i].Equals(ea1))
                 {
                     earlyAbilities += abilityCodes[i] + " "; 
@@ -271,7 +239,7 @@ public class GenerateSettings : MonoBehaviour
         {
             for (int i = 0; i < abiltiyNames.Length; i++)
             {
-                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                //Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
                 if (abiltiyNames[i].Equals(ea2))
                 {
                     earlyAbilities += abilityCodes[i] + " ";
@@ -284,7 +252,7 @@ public class GenerateSettings : MonoBehaviour
         {
             for (int i = 0; i < abiltiyNames.Length; i++)
             {
-                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                //Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
                 if (abiltiyNames[i].Equals(ea3))
                 {
                     earlyAbilities += abilityCodes[i] + " ";
@@ -297,7 +265,7 @@ public class GenerateSettings : MonoBehaviour
         {
             for (int i = 0; i < abiltiyNames.Length; i++)
             {
-                Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
+                //Debug.Log("Current Abiltiy: " + abiltiyNames[0]);
                 if (abiltiyNames[i].Equals(ea4))
                 {
                     earlyAbilities += abilityCodes[i];
@@ -417,8 +385,35 @@ public class GenerateSettings : MonoBehaviour
         //up to page 6 is rando
         if (myAWSlider.getAWSliderValue() == 4)
         {
-            replaceRewards += "2D 2E \n";
+            replaceRewards += "2D 2E ";
         }
+
+        //super bosses
+        //sephiroth
+        if (mySephirothSlider.getSephirothSliderValue() == 0)
+        {
+            replaceRewards += "95 ";
+        }
+
+        //ice titan
+        if (myIceTitanSlider.getIceTitanSliderValue() == 0)
+        {
+            replaceRewards += "94 ";
+        }
+
+        //kurt zisa
+        if (myKurtZisaSlider.getKurtZisaSliderValue() == 0)
+        {
+            replaceRewards += "96 ";
+        }
+
+        //unknown
+        if (myMFSlider.getUnknownSliderValue() == 0)
+        {
+            replaceRewards += "97";
+        }
+
+        replaceRewards += "\n";
 
 
 
