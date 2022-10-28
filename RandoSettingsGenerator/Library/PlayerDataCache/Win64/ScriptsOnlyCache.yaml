@@ -2,7 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AWSlider
-    - Ability
     - AtlanticaSlider
     - DIGoSlider
     - DJSlider
@@ -10,6 +9,7 @@ ScriptsOnlyBuild:
     - EA2_Input
     - EA3_Input
     - EA4_Input
+    - EOTWSkipSlider
     - FinalRestSlider
     - GenerateButton
     - GenerateSettings
@@ -17,9 +17,13 @@ ScriptsOnlyBuild:
     - HTSlider
     - HadesCupSlider
     - HintInput
+    - IceTitanSlider
+    - KurtZisaSlider
+    - MFSlider
     - MovementSlider
     - OlympusSlider
     - SaveWarpSlider
+    - SephirothSlider
     - ShopRandoSlider
     - WLSlider
     - WeaponStatSlider
@@ -27,6 +31,8 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -46,11 +52,16 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -72,9 +83,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11268}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 11394}
+      Script: {instanceID: 11410}
     - Class: 114
       Script: {instanceID: 11476}
     - Class: 114
@@ -84,53 +95,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11566}
     - Class: 114
+      Script: {instanceID: 11570}
+    - Class: 114
       Script: {instanceID: 11620}
+    - Class: 114
+      Script: {instanceID: 12114}
     - Class: 114
       Script: {instanceID: 12280}
     - Class: 114
       Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 12472}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 12618}
+      Script: {instanceID: 12484}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 12696}
+      Script: {instanceID: 12622}
     - Class: 114
-      Script: {instanceID: 12816}
+      Script: {instanceID: 12648}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12682}
     - Class: 114
-      Script: {instanceID: 13292}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 13446}
+      Script: {instanceID: 12820}
     - Class: 114
-      Script: {instanceID: 13490}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13614}
+      Script: {instanceID: 13296}
     - Class: 114
-      Script: {instanceID: 13630}
+      Script: {instanceID: 13450}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 13494}
     - Class: 114
-      Script: {instanceID: 13772}
+      Script: {instanceID: 13618}
+    - Class: 114
+      Script: {instanceID: 13634}
+    - Class: 114
+      Script: {instanceID: 13636}
+    - Class: 114
+      Script: {instanceID: 13768}
     - Class: 114
       Script: {instanceID: 13778}
     - Class: 114
-      Script: {instanceID: 13842}
+      Script: {instanceID: 13784}
     - Class: 114
-      Script: {instanceID: 13874}
+      Script: {instanceID: 13848}
+    - Class: 114
+      Script: {instanceID: 13880}
     - Class: 114
       Script: {instanceID: 14368}
     - Class: 114
-      Script: {instanceID: 14396}
+      Script: {instanceID: 14374}
     - Class: 114
-      Script: {instanceID: 14398}
+      Script: {instanceID: 14402}
     - Class: 114
-      Script: {instanceID: 14440}
+      Script: {instanceID: 14404}
+    - Class: 114
+      Script: {instanceID: 14424}
+    - Class: 114
+      Script: {instanceID: 14446}
+    - Class: 114
+      Script: {instanceID: 16254}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,16 +203,16 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Ability
-  - hash:
-      serializedVersion: 2
-      Hash: 46822ac56f2e432a87f7cf562aad7bc9
+      Hash: c6661c61fa47f9b6b6942fc3d42f153f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EA1_Input
+  - hash:
+      serializedVersion: 2
+      Hash: 6dfa8a1eb33cfe45677e9bdd495ccd33
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IceTitanSlider
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -216,7 +245,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: dcd64916287d0edaa557f72884034cc8
+      Hash: e9cbbf0b00d0cc4769552e89f0506059
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EA2_Input
@@ -372,7 +401,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: fde0fbfac2e0240bdd0efa3290d42479
+      Hash: 21a4de735644318bcf76630565b13fe7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EA3_Input
@@ -402,6 +431,12 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 06f2cd340423b88244074015ccbb7b0a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SephirothSlider
+  - hash:
+      serializedVersion: 2
       Hash: 0edeba255bdbade25edc357f1412ba38
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
@@ -426,7 +461,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: aa2801b460b6ef02d63b53156ce6adda
+      Hash: 9f6a57680cd108bbd7677cdd01e2bd48
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EA4_Input
@@ -436,6 +471,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OlympusSlider
+  - hash:
+      serializedVersion: 2
+      Hash: ab50a13f216b21ea50f710184d629dd4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MFSlider
   - hash:
       serializedVersion: 2
       Hash: cf0837f8c1908a26327d6a00232927cf
@@ -598,6 +639,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HTSlider
+  - hash:
+      serializedVersion: 2
+      Hash: d0fd91705cb305a77c02aecc1ffae217
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KurtZisaSlider
   - hash:
       serializedVersion: 2
       Hash: 6939772cb3ce775a8e8d99f332534491
@@ -766,7 +813,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 1e07897d84667a2072619148de5380e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EOTWSkipSlider
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/ryanm/Desktop/RandoSettingsGenerator/RandoSettingsGenerator.exe
+  playerPath: C:/Users/ryanm/Desktop/GeneratorBuild/RandoSettingsGenerator.exe

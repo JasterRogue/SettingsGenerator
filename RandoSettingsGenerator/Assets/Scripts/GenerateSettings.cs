@@ -34,6 +34,7 @@ public class GenerateSettings : MonoBehaviour
     IceTitanSlider myIceTitanSlider;
     KurtZisaSlider myKurtZisaSlider;
     MFSlider myMFSlider;
+    EOTWSkipSlider myEOTWSkipSlider;
     [SerializeField] Image successImage; 
 
     //Ability[] a;
@@ -68,6 +69,7 @@ public class GenerateSettings : MonoBehaviour
         myIceTitanSlider = GameObject.FindObjectOfType<IceTitanSlider>();
         myKurtZisaSlider = GameObject.FindObjectOfType<KurtZisaSlider>();
         myMFSlider = GameObject.FindObjectOfType<MFSlider>();
+        myEOTWSkipSlider = GameObject.FindObjectOfType<EOTWSkipSlider>();
 
 
         //Create ability list
@@ -308,6 +310,15 @@ public class GenerateSettings : MonoBehaviour
 
         warpVal += mySaveWarpSlider.getWarpSliderValue().ToString() + "\n";
 
+        //end of the world skip
+        string eotwSkipVal = "EotWSkip = ";
+        string eotwSkipInfo = "c HB2 unlocks EotW World Terminus warp\n" +
+            "c Allows skipping a large portion of End of the World\n" +
+            "c Still requires Navi Gummi as usual, so only speeds things up after necessary items have been found\n" +
+            "c 0 = Disabled\n" +
+            "c 1 = Enabled\n";
+
+        eotwSkipVal += myEOTWSkipSlider.getEOTWSkipSliderValue().ToString() + "\n";
         //shops
         string shopVal = "RandomShops = ";
         string shopInfo = "c Shop randomization\n" +
@@ -474,6 +485,8 @@ public class GenerateSettings : MonoBehaviour
                 sw.WriteLine(movemementStackVal);
                 sw.WriteLine(warpInfo);
                 sw.WriteLine(warpVal);
+                sw.WriteLine(eotwSkipInfo);
+                sw.WriteLine(eotwSkipVal);
                 sw.WriteLine(shopInfo);
                 sw.WriteLine(shopVal);
                 sw.WriteLine(replaceRewardInfo);
