@@ -58,7 +58,7 @@ c Still requires Navi Gummi as usual, so only speeds things up after necessary i
 c 0 = Disabled
 c 1 = Enabled
 
-EotWSkip = 1
+EotWSkip = 0
 
 c Shop randomization
 c 0 = Vanilla shops
